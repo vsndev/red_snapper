@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import view_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', )
+    path('/', view_login.showlogin, name='template_login'),
 ]
