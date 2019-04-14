@@ -19,5 +19,6 @@ from red_snapper_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.ShowLogin, name=""),
+    path('', views.ShowLogin, name="login"),
+    path('toppage/', views.ShowToppage, name="toppage"),
 ]
