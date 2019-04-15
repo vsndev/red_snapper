@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
 from red_snapper_app import views
+from  red_snapper_app.views import CreateRegisterView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.ShowLogin, name="login"),
     path('toppage/', views.ShowToppage, name="toppage"),
+    #url(r'^register$', CreateRegisterView.as_view()),
+    path('register/',CreateRegisterView.as_view())
 ]
