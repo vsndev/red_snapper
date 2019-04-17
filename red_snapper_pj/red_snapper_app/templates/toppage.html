@@ -4,25 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/toppage.css">
     <title>Home</title>
   </head>
   <body>
-    <header class="d-flex bg-primary">
-      <div class="p-2">
-        <img src="yurucat.jpg" width="30" height="30" alt="">
-      </div>
-      <div class="p-2 mr-auto">
-        <h2>知らせタイ！</h2>
-      </div>
-      <div class="p-2 btn">
-        ログアウト
-      </div>
+    <header class="bg-primary">
+      <nav class="navbar bg-primary">
+        <ul class="nav navbar-nav mr-auto">
+          <li class="nav-item">
+            <img src="yurucat.jpg" width="30" height="30" alt="">
+          </li>
+          <li class="nav-item text-light align-middle ">
+            <h2>知らせタイ！</h2>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <a class="btn text-light" href="{% url 'login' %}">ログアウト</a>
+        </span>
+      </nav>
     </header>
-    <form align="center">
-      <fieldset>
-        <legend>ようこそ、USER1さん。お疲れ様です。</legend>
-        <button type="submit">提出期限の登録へ</button>
-      </fieldset>
-    </form>
+    <div align="center">
+      <div class="">ようこそ、USER1さん。お疲れ様です。</div>
+      <a class="btn btn-success" href="#">提出期限の登録へ</a>
+    </div>
   </body>
 </html>
