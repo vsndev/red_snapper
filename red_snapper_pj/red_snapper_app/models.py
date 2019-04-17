@@ -7,6 +7,7 @@ class RegisterData(models.Model):
     doc_title = models.CharField(max_length=50)
     deadline_date= models.DateField(default=datetime.date.today)
 
-    def __str__(self):
-        return'&lt;Register:name=' + str(self.id) + ',' +self.member_name + ',' + self.doc_title 
+    def DataList(self):
+        list = [self.member_name , self.doc_title , self.deadline_date]
+        return list
 
