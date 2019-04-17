@@ -5,4 +5,7 @@ from .models import RegisterData
 class RegisterForm(forms.ModelForm):
     class  Meta:
         model = RegisterData
-        fields = ("member_name","doc_title","deadline_date")
+        fields = ["member_name","doc_title","deadline_date"]
+        widgets = {
+            "deadline_date": forms.SelectDateWidget
+        }

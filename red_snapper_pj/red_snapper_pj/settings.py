@@ -31,13 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'red_snapper_app.apps.RedSnapperAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'red_snapper_app'
+    'django.contrib.staticfiles'
+    #'red_snapper_app'
 ]
 
 MIDDLEWARE = [
