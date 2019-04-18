@@ -21,5 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.ShowLogin, name="login"),
     path('toppage/', views.ShowToppage, name="toppage"),
-    path('register/',views.ShowRegister, name="register")
+    path('register/',views.ShowRegister, name="register"),
+    #検証用削除予定
+    path('test/',views.ShowTest,name="test")
+
 ]
