@@ -1,21 +1,41 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <title>Register Documents</title>
-        <h1 class="text-light bg-info" align="center">
-            提出書類を登録するたい
-        </h1>
-    </head>
-    <body>
-        <form method="POST" align="center">
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\statics\css\toppage.css">
+    <title>Home</title>
+  </head>
+  <body>
+    <header class="bg-primary">
+      <nav class="navbar bg-primary">
+        <ul class="nav navbar-nav mr-auto">
+          <li class="nav-item">
+            <img src="yurucat.jpg" width="30" height="30" alt="">
+          </li>
+          <li class="nav-item text-light align-middle ">
+            <h2>提出書類を登録するタイ！</h2>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <a class="btn text-light" href="{% url 'toppage' %}">トップページ</a>
+          <a class="btn text-light" href="{% url 'login' %}">ログアウト</a>
+        </span>
+      </nav>
+    </header>
+    <div align="center">
+        <form method="POST">
             {% csrf_token %}
-            <table align="center">
-              <h2>期限を登録</h2>
+            <br>
+            <table>
                 {{ form.as_table }}
             </table>
-            <button type="submit">登録</button>
+            <a class="btn btn-success" href="#">登録</a>
         </form>
-    </body>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
