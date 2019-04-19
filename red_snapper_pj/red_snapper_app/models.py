@@ -11,3 +11,10 @@ class RegisterData(models.Model):
         list = [self.member_name , self.doc_title , self.deadline_date]
         return list
 
+
+class User(models.Model):
+    username = models.CharField(max_length=100)
+    password = models.CharField(max_length=20)
+
+    def __str__(self):
+        return 'username: {}, password: [}'.format(self.username, self.password)
