@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <title>データの取り出し方検証用</title>
+        <h1 class="text-light bg-info" align="center">
+           一覧たい
+        </h1>
+    </head>
+    <body>
+        <h2>おはようございます</h2>
+        <table>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.member_name }}が</td>
+                <td>{{ item.deadline_date }}が期限の</td>
+                <td>{{ item.doc_title}}を出していません。</td>
+            <tr>
+            {% endfor %}
+        </table>
+        <p>{{ message }}</p>
+    </body>
+</html>
+
+
