@@ -42,4 +42,17 @@ def ShowTest(request):
         'data': data,
         'message': message,
     }
-    return render(request, 'test.html', params)
+    return render(request, 'toppage.html', params)
+
+def ShowRegister(request):
+    data=RegisterData.objects.all()
+    if request.method == 'POST':
+        model = RegisterData()
+        register = RegisterForm(request.POST, instance = model)
+        register.save()
+        return redirect(to='/register')
+    
+    params = {
+        'form': RegisterForm(),
+    }
+    return render(request,'register.html',params)
