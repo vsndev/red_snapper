@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
-    #'red_snapper_app'
+    'django.contrib.staticfiles',
+    # 'red_snapper_app'
 ]
 
 MIDDLEWARE = [
