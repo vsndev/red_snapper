@@ -17,16 +17,16 @@
         </ul>
       </nav>
     </header>
-    <form align="center" action="#">
+    <form align="center" action="{% url 'logincheck' %}" method="POST">
       <fieldset>
         <legend>Login</legend>
         <p>
           <label for="input">ログインID</label>
-          <input type="text" id="inputID" placeholder="ID">
+          <input type="text" id="inputID" placeholder="ID" name="username">
         </p>
         <p>
           <label for="input">パスワード</label>
-          <input type="text" id="inputPass" placeholder="Password">
+          <input type="text" id="inputPass" placeholder="Password" name="username">
         </p>
         <p>
           <button type="submit">ログイン</button>

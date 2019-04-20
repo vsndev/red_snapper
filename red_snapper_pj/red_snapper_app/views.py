@@ -12,23 +12,6 @@ def ShowLogin(request):
 
 
 def ShowToppage(request):
-    return render(request, "toppage.html")
-
-def ShowRegister(request):
-    data=RegisterData.objects.all()
-    if request.method == 'POST':
-        model = RegisterData()
-        register = RegisterForm(request.POST, instance = model)
-        register.save()
-        return redirect(to='/register')
-    
-    params = {
-        'form': RegisterForm(),
-    }
-    return render(request,'register.html',params)
-
-#期日1週間前およびそれを切っているリストを取得、test.htmlに返す
-def ShowTest(request):
     today =datetime.date.today()
     borderdate = today + datetime.timedelta(weeks=1)
     data = RegisterData.objects.filter( deadline_date__lte = borderdate )
@@ -59,7 +42,21 @@ def ShowRegister(request):
     return render(request,'register.html',params)
 
 
-def LoginCheck(request):
+def ShowRegister(request):
+    data=RegisterData.objects.all()
+    if request.method == 'POST':
+        model = RegisterData()
+        register = RegisterForm(request.POST, instance = model)
+        register.save()
+        return redirect(to='/register')
+    
+    params = {
+        'form': RegisterForm(),
+    }
+    return render(request,'register.html',params)
+
+
+def ShowLoginCheck(request):
     requested_username = request.POST['username']
     requested_password = request.POST['password']
     user = is_correct_password(requested_username, requested_password)
