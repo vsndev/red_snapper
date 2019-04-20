@@ -64,8 +64,8 @@ def LoginCheck(request):
     requested_password = request.POST['password']
     user = is_correct_password(requested_username, requested_password)
     if user:
-        ShowToppage(request)
-    ShowLogin(request)
+        return ShowToppage(request)
+    return ShowLogin(request)
 
 
 
