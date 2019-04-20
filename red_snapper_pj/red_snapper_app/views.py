@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import RegisterData
+from .models import User
 from .forms import RegisterForm
 from django.shortcuts import redirect
 import datetime
@@ -56,3 +57,23 @@ def ShowRegister(request):
         'form': RegisterForm(),
     }
     return render(request,'register.html',params)
+
+
+def LoginCheck(request):
+    requested_username = request.POST['username']
+    requested_password = request.POST['password']
+    user = is_correct_password(requested_username, requested_password)
+    if user:
+        ShowToppage(request)
+    ShowLogin(request)
+
+
+
+# Auxiliary methods
+def is_correct_password(requested_username, requested_password):
+    user = User.objects.get_or_none(username=requested_username)
+    if user:
+        if user.password == requested_password:
+            return user
+    return None
+
